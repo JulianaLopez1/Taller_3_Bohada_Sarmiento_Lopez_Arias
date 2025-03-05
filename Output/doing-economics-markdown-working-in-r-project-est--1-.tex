@@ -1,0 +1,1022 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Empirical Project 1: Working in R code},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Empirical Project 1: Working in R code}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Empirical Project 1 Working in
+R}\label{empirical-project-1-working-in-r}
+
+These code downloads have been constructed as supplements to the full
+Doing Economics projects (\url{https://core-econ.org/doing-economics/}).
+You'll need to download the data before running the code that follows.
+
+\subsection{Part 1.1 The behaviour of average surface temperature over
+time}\label{part-1.1-the-behaviour-of-average-surface-temperature-over-time}
+
+\subsubsection{R walk-through 1.1 Importing the datafile into
+R}\label{r-walk-through-1.1-importing-the-datafile-into-r}
+
+We want to import the datafile called `NH.Ts+dSST.csv' into R.
+
+We start by setting our working directory using the \texttt{setwd}
+command. This command tells R where your datafiles are stored. In the
+code below, replace `YOURFILEPATH' with the full filepath that indicates
+the folder in which you have saved the datafile. If you don't know how
+to find the path to your working folder, see the `Technical Reference'
+section (\url{https://tinyco.re/3407438}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/moral/OneDrive/Escritorio/Taller_3_Bohada_Sarmiento_Lopez_Arias/Code"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:/Users/moral/OneDrive/Escritorio/Taller\_3\_Bohada\_Sarmiento\_Lopez\_Arias"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Since our data is in csv format, we use the \texttt{read.csv} function
+to import the data into R. We will call our file `tempdata' (short for
+`temperature data').
+
+Here you can see commands to R which are spread across two lines. You
+can spread a command across multiple lines, but you must adhere to the
+following two rules for this to work. First, the line break should come
+inside a set of parenthesis (i.e.~between \texttt{(} and \texttt{)} or
+straight after the assignment operator (\texttt{\textless{}-}). Second,
+the line break must not be inside a string (whatever is inside quotes)
+or in the middle of a word or number.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempdata }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/moral/OneDrive/Escritorio/Taller\_3\_Bohada\_Sarmiento\_Lopez\_Arias/RAW/NH.Ts+dSST.csv"}\NormalTok{,}
+  \AttributeTok{skip =} \DecValTok{1}\NormalTok{, }\AttributeTok{na.strings =} \StringTok{"***"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+When using this function, we added two options. If you open the
+spreadsheet in Excel, you will see that the real data table only starts
+in Row 2, so we use the \texttt{skip\ =\ 1} option to skip the first row
+when importing the data. When looking at the spreadsheet, you can see
+that missing temperature data is coded as \texttt{"***"}. In order for R
+to recognise the non-missing temperature data as numbers, we use the
+\texttt{na.strings\ =\ "***"} option to indicate that missing
+observations in the spreadsheet are coded as \texttt{"***"}.
+
+To check that the data has been imported correctly, you can use the
+\texttt{head} function to view the first six rows of the dataset, and
+confirm that they correspond to the columns in the csv file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year   Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec
+## 1 1880 -0.38 -0.52 -0.23 -0.30 -0.04 -0.18 -0.21 -0.25 -0.24 -0.29 -0.43 -0.41
+## 2 1881 -0.30 -0.24 -0.05 -0.02  0.05 -0.33  0.10 -0.05 -0.27 -0.44 -0.36 -0.23
+## 3 1882  0.26  0.22  0.03 -0.29 -0.22 -0.28 -0.28 -0.14 -0.24 -0.51 -0.33 -0.67
+## 4 1883 -0.57 -0.65 -0.14 -0.29 -0.25 -0.11 -0.05 -0.22 -0.33 -0.15 -0.43 -0.14
+## 5 1884 -0.15 -0.10 -0.63 -0.58 -0.35 -0.40 -0.40 -0.50 -0.44 -0.43 -0.57 -0.46
+## 6 1885 -1.00 -0.45 -0.23 -0.48 -0.57 -0.44 -0.33 -0.40 -0.38 -0.36 -0.37 -0.10
+##     J.D   D.N   DJF   MAM   JJA   SON
+## 1 -0.29    NA    NA -0.19 -0.21 -0.32
+## 2 -0.18 -0.19 -0.32 -0.01 -0.09 -0.36
+## 3 -0.20 -0.17  0.08 -0.16 -0.23 -0.36
+## 4 -0.28 -0.32 -0.63 -0.23 -0.12 -0.31
+## 5 -0.42 -0.39 -0.13 -0.52 -0.44 -0.48
+## 6 -0.43 -0.46 -0.64 -0.42 -0.39 -0.37
+\end{verbatim}
+
+Before working with the important data, we use the \texttt{str} function
+to check that the data is formatted correctly.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    145 obs. of  19 variables:
+##  $ Year: int  1880 1881 1882 1883 1884 1885 1886 1887 1888 1889 ...
+##  $ Jan : num  -0.38 -0.3 0.26 -0.57 -0.15 -1 -0.73 -1.08 -0.48 -0.27 ...
+##  $ Feb : num  -0.52 -0.24 0.22 -0.65 -0.1 -0.45 -0.83 -0.7 -0.61 0.3 ...
+##  $ Mar : num  -0.23 -0.05 0.03 -0.14 -0.63 -0.23 -0.7 -0.44 -0.63 -0.01 ...
+##  $ Apr : num  -0.3 -0.02 -0.29 -0.29 -0.58 -0.48 -0.36 -0.38 -0.21 0.17 ...
+##  $ May : num  -0.04 0.05 -0.22 -0.25 -0.35 -0.57 -0.33 -0.25 -0.14 -0.03 ...
+##  $ Jun : num  -0.18 -0.33 -0.28 -0.11 -0.4 -0.44 -0.37 -0.2 -0.02 -0.06 ...
+##  $ Jul : num  -0.21 0.1 -0.28 -0.05 -0.4 -0.33 -0.14 -0.24 0 -0.08 ...
+##  $ Aug : num  -0.25 -0.05 -0.14 -0.22 -0.5 -0.4 -0.42 -0.55 -0.21 -0.2 ...
+##  $ Sep : num  -0.24 -0.27 -0.24 -0.33 -0.44 -0.38 -0.32 -0.2 -0.19 -0.29 ...
+##  $ Oct : num  -0.29 -0.44 -0.51 -0.15 -0.43 -0.36 -0.31 -0.49 -0.03 -0.41 ...
+##  $ Nov : num  -0.43 -0.36 -0.33 -0.43 -0.57 -0.37 -0.4 -0.27 0 -0.61 ...
+##  $ Dec : num  -0.41 -0.23 -0.67 -0.14 -0.46 -0.1 -0.21 -0.42 -0.23 -0.54 ...
+##  $ J.D : num  -0.29 -0.18 -0.2 -0.28 -0.42 -0.43 -0.43 -0.43 -0.23 -0.17 ...
+##  $ D.N : num  NA -0.19 -0.17 -0.32 -0.39 -0.46 -0.42 -0.42 -0.25 -0.14 ...
+##  $ DJF : num  NA -0.32 0.08 -0.63 -0.13 -0.64 -0.55 -0.66 -0.5 -0.07 ...
+##  $ MAM : num  -0.19 -0.01 -0.16 -0.23 -0.52 -0.42 -0.46 -0.35 -0.33 0.04 ...
+##  $ JJA : num  -0.21 -0.09 -0.23 -0.12 -0.44 -0.39 -0.31 -0.33 -0.07 -0.11 ...
+##  $ SON : num  -0.32 -0.36 -0.36 -0.31 -0.48 -0.37 -0.34 -0.32 -0.07 -0.44 ...
+\end{verbatim}
+
+You can see that all variables are formatted as numerical data
+(\texttt{num}), so R correctly recognises that the data are numbers.
+
+{[}End of walk-through{]}
+
+\subsubsection{R walk-through 1.2 Drawing a line chart of temperature
+and
+time}\label{r-walk-through-1.2-drawing-a-line-chart-of-temperature-and-time}
+
+The data is formatted as numerical (\texttt{num}) data, so R recognises
+each variable as a series of numbers (instead of text), but does not
+recognise that these numbers correspond to the same variable for
+different time periods (known as `time series data' in economics).
+Letting R know that we have time series data will make coding easier
+later (especially with making graphs). You can use the \texttt{ts}
+function to specify that a variable is a time series. Make sure to amend
+the code below so that the end year (\texttt{end\ =\ c()}) corresponds
+to the latest year in your dataset (our example uses 2017).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{Jan }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{Jan, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{),}\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{) }
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{DJF }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{DJF, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{), }\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{)}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{MAM }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{MAM, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{),}\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{)}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{JJA }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{JJA, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{),}\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{)}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{SON }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{SON, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{),}\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{)}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{J.D }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{J.D, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1880}\NormalTok{),}\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2024}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note that we placed each of these quarterly series in the relevant
+middle month. You could do the same for the remaining series, but we
+will only use the series above in this R walk-through.
+
+We can now use these variables to draw line charts using the
+\texttt{plot} function. As an example, we will draw a line chart using
+data for January (\texttt{tempdata\$Jan}) for the years 1880--2016. The
+\texttt{title} option on the next line adds a chart title, and the
+\texttt{abline} option draws a horizontal line according to our
+specifications. Make sure to amend the code below so that your chart
+title corresponds to the latest year in your dataset (our example uses
+2016).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{Jan, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Annual temperature anomalies"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Average temperature anomaly in January in the northern hemisphere (1880{-}2024)"}\NormalTok{) }\CommentTok{\# Agrega el título aquí}
+
+\CommentTok{\# Agrega la línea horizontal}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h =} \DecValTok{0}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkorange2"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\CommentTok{\# Agrega el texto explicativo}
+\FunctionTok{text}\NormalTok{(}\DecValTok{2000}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{, }\StringTok{"1880{-}2024 average"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Try different values for \texttt{type} and \texttt{col} in the
+\texttt{plot} function to figure out what these options do (some online
+research could help). \texttt{xlab} and \texttt{ylab} define the
+respective axis titles.
+
+It is important to remember that all axis and chart titles should be
+enclosed in quotation marks (\texttt{""}), as well as any words that are
+not options (for example, colour names or filenames).
+
+{[}End of walk-through{]}
+
+\subsubsection{R walk-through 1.3 Producing a line chart for the annual
+temperature
+anomalies}\label{r-walk-through-1.3-producing-a-line-chart-for-the-annual-temperature-anomalies}
+
+This is where the power of programming languages becomes evident: to
+produce the same line chart for a different variable, we simply take the
+code used in R walk-through 1.2 and replace the variable name
+\texttt{Jan} with the name for the annual variable (\texttt{J.D}).
+Again, make sure to amend the code so that your chart title corresponds
+to the latest year in your data (our example uses 2016).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Set line width and colour}
+\FunctionTok{plot}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{J.D, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \AttributeTok{ylab =} \StringTok{"Annual temperature anomalies"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{)}
+
+\CommentTok{\# \textbackslash{}n creates a line break}
+\FunctionTok{title}\NormalTok{(}\StringTok{"Average annual temperature anomaly }\SpecialCharTok{\textbackslash{}n}\StringTok{ in the northern hemisphere (1880{-}2016)"}\NormalTok{)}
+
+\CommentTok{\# Add a horizontal line (at y = 0)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h =} \DecValTok{0}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkorange2"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\CommentTok{\# Add a label to the horizontal line}
+\FunctionTok{text}\NormalTok{(}\DecValTok{2000}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{, }\StringTok{"1951{-}1980 average"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+{[}End of walk-through{]}
+
+\subsection{Part 1.2 Variation in temperature over
+time}\label{part-1.2-variation-in-temperature-over-time}
+
+\subsubsection{R walk-through 1.4 Creating frequency tables and
+histograms}\label{r-walk-through-1.4-creating-frequency-tables-and-histograms}
+
+Since we will be looking at data from different subperiods (year
+intervals) separately, we will create a categorical variable (a variable
+that has two or more categories) that indicates the subperiod for each
+observation (row). In R this type of variable is called a `factor
+variable'. When we create a factor variable, we need to define the
+categories that this variable can take.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{Period }\OtherTok{\textless{}{-}} 
+  \FunctionTok{factor}\NormalTok{(}\ConstantTok{NA}\NormalTok{, }\AttributeTok{levels =} 
+    \FunctionTok{c}\NormalTok{(}\StringTok{"1921{-}1950"}\NormalTok{, }\StringTok{"1951{-}1980"}\NormalTok{, }\StringTok{"1981{-}2010"}\NormalTok{), }
+    \AttributeTok{ordered =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+We created a new variable called \texttt{Period} and defined the
+possible categories (which R refers to as `levels'). Since we will not
+be using data for some years (before 1921 and after 2010), we want
+\texttt{Period} to take the value `NA' (not available) for these
+observations (rows), and the appropriate category for all the other
+observations (between 1921--2010). One way to do this is by defining
+\texttt{Period} as `NA' for all observations, then change the values of
+\texttt{Period} for the observations in 1921--2010.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{Period[(tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textgreater{}} \DecValTok{1920}\NormalTok{) }\SpecialCharTok{\&}
+\NormalTok{  (tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textless{}} \DecValTok{1951}\NormalTok{)] }\OtherTok{\textless{}{-}} \StringTok{"1921{-}1950"}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{Period[(tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textgreater{}} \DecValTok{1950}\NormalTok{) }\SpecialCharTok{\&}
+\NormalTok{  (tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textless{}} \DecValTok{1981}\NormalTok{)] }\OtherTok{\textless{}{-}} \StringTok{"1951{-}1980"}
+\NormalTok{tempdata}\SpecialCharTok{$}\NormalTok{Period[(tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textgreater{}} \DecValTok{1980}\NormalTok{) }\SpecialCharTok{\&}
+\NormalTok{  (tempdata}\SpecialCharTok{$}\NormalTok{Year }\SpecialCharTok{\textless{}} \DecValTok{2011}\NormalTok{)] }\OtherTok{\textless{}{-}} \StringTok{"1981{-}2010"}
+\end{Highlighting}
+\end{Shaded}
+
+We need to use all monthly anomalies from June, July, and August, but
+they are currently in three separate columns. We will use the \texttt{c}
+(combine) function to create one new variable (called
+\texttt{temp\_summer}) that contains all these values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Combine the temperature data for June, July, and August}
+\NormalTok{temp\_summer }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{Jun, tempdata}\SpecialCharTok{$}\NormalTok{Jul, tempdata}\SpecialCharTok{$}\NormalTok{Aug)}
+\end{Highlighting}
+\end{Shaded}
+
+Now we have one long variable (\texttt{temp\_summer}), with the monthly
+temperature anomalies for the three months (from 1880 to the latest
+year) attached to each other. But remember that we want to make separate
+calculations for each category in \texttt{Period} (1921--1950,
+1951--1980, 1981--2010). To make a variable showing the categories for
+the \texttt{temp\_summer} variable, we use the \texttt{c} function
+again.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{temp\_summer }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(tempdata[,}\DecValTok{7}\SpecialCharTok{:}\DecValTok{9}\NormalTok{],}\AttributeTok{use.names =}\ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Mirror the Period information for temp\_sum}
+\NormalTok{temp\_Period }\OtherTok{\textless{}{-}} 
+\FunctionTok{c}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{Period, tempdata}\SpecialCharTok{$}\NormalTok{Period, tempdata}\SpecialCharTok{$}\NormalTok{Period)}
+
+\CommentTok{\# Repopulate the factor information }
+\end{Highlighting}
+\end{Shaded}
+
+After using the \texttt{c} function, we had to use the \texttt{factor}
+function again to tell R that our new variable \texttt{temp\_Period} is
+a factor variable.
+
+We have now created the variables needed to make frequency tables and
+histograms (\texttt{temp\_summer} and \texttt{temp\_Period}). To obtain
+the frequency table for 1951--1980, we use the \texttt{hist} function on
+the monthly temperature anomalies from the period `1951--1980':
+\texttt{temp\_summer{[}(temp\_Period\ ==\ "1951-1980"){]}}. The option
+\texttt{plot\ =\ FALSE} tells R not to make a plot of this information.
+(See what happens if you set it to \texttt{TRUE}.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(temp\_summer[(temp\_Period }\SpecialCharTok{==} \StringTok{"1951{-}1980"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+From the output you can see that we can get the temperature ranges (the
+values in \texttt{\$breaks} correspond to Column 1 of Figure 1.5) and
+the frequencies (\texttt{\$counts}), which is all we need to create a
+frequency table. However, in our case the frequency table is merely a
+temporary input required to produce a histogram.
+
+We can make the three histograms we need all at once, using the
+\texttt{histogram} function from the \texttt{mosaic} package.
+
+The function below includes multiple commands:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\textbar{}\ temp\_Period} splits the data according to its
+  category, given by \texttt{temp\_Period}.
+\item
+  \texttt{type\ =\ "count"} indicates that we want to display the counts
+  (frequencies) in each category.
+\item
+  \texttt{breaks\ =\ seq(-0.5,\ 1.3,\ 0.1)} gives a sequence of numbers
+  −0.5, −0.4,~\ldots, 1.3, which are boundaries for the categories.
+\item
+  \texttt{main\ =\ "Histogram\ of\ temperature\ anomalies"} gives Figure
+  1.6 its title.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the library we use for the following command.}
+\FunctionTok{library}\NormalTok{(mosaic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'mosaic':
+##   method                           from   
+##   fortify.SpatialPolygonsDataFrame ggplot2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## The 'mosaic' package masks several functions from core packages in order to add 
+## additional features.  The original behavior of these functions should not be affected by this.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Adjuntando el paquete: 'mosaic'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     count, do, tally
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:Matrix':
+## 
+##     mean
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ggplot2':
+## 
+##     stat
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
+##     quantile, sd, t.test, var
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     max, mean, min, prod, range, sample, sum
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{histogram}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ temp\_summer }\SpecialCharTok{|}\NormalTok{ temp\_Period, }\AttributeTok{type =} \StringTok{"count"}\NormalTok{, }
+  \AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.5}\NormalTok{, }\FloatTok{1.3}\NormalTok{, }\FloatTok{0.10}\NormalTok{), }
+  \AttributeTok{main =} \StringTok{"Histogram of Temperature anomalies"}\NormalTok{, }
+  \AttributeTok{xlab =} \StringTok{"Summer temperature distribution"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\subsubsection{\texorpdfstring{R walk-through 1.5 Using the
+\texttt{quantile}
+function}{R walk-through 1.5 Using the quantile function}}\label{r-walk-through-1.5-using-the-quantile-function}
+
+First, we need to create a variable that contains all monthly anomalies
+in the years 1951--1980. Then, we use R's \texttt{quantile} function to
+find the required percentiles (0.3 and 0.7 refer to the 3rd and 7th
+deciles, respectively).
+
+\emph{Note}: You may get slightly different values to those shown here
+if you are using the latest data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Select years 1951 to 1980}
+\NormalTok{temp\_all\_months }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(tempdata, }
+\NormalTok{  (Year }\SpecialCharTok{\textgreater{}=} \DecValTok{1951} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{1980}\NormalTok{))}
+                   
+\CommentTok{\# Columns 2 to 13 contain months Jan to Dec.}
+\NormalTok{temp\_51to80 }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(temp\_all\_months[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{13}\NormalTok{])}
+      
+\CommentTok{\# c(0.3, 0.7) indicates the chosen percentiles.}
+\NormalTok{perc }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(temp\_51to80, }\FunctionTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.7}\NormalTok{))   }
+
+\CommentTok{\# The cold threshold}
+\NormalTok{p30 }\OtherTok{\textless{}{-}}\NormalTok{ perc[}\DecValTok{1}\NormalTok{]}
+\NormalTok{p30}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  30% 
+## -0.1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The hot threshold}
+\NormalTok{p70 }\OtherTok{\textless{}{-}}\NormalTok{ perc[}\DecValTok{2}\NormalTok{]}
+\NormalTok{p70}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 70% 
+## 0.1
+\end{verbatim}
+
+\emph{Explica el resultado}
+
+{[}End of walk-through{]}
+
+\subsubsection{\texorpdfstring{R walk-through 1.6 Using the
+\texttt{mean}
+function}{R walk-through 1.6 Using the mean function}}\label{r-walk-through-1.6-using-the-mean-function}
+
+\emph{Note}: You may get slightly different values to those shown here
+if you are using the latest data.
+
+We repeat the steps used in R walk-through 1.5, now looking at monthly
+anomalies in the years 1981--2010. We can simply change the year values
+in the code from R walk-through 1.5.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Select years 1951 to 1980}
+\NormalTok{temp\_all\_months }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(tempdata, }
+\NormalTok{  (Year }\SpecialCharTok{\textgreater{}=} \DecValTok{1981} \SpecialCharTok{\&}\NormalTok{ Year }\SpecialCharTok{\textless{}=} \DecValTok{2010}\NormalTok{))}
+                   
+\CommentTok{\# Columns 2 to 13 contain months Jan to Dec.}
+\NormalTok{temp\_81to10 }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(temp\_all\_months[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{13}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+Now that we have all the monthly data for 1981--2010, we want to count
+the proportion of observations that are smaller than --0.1. This is
+easily achieved with the following lines of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Proportion smaller than p30"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Proportion smaller than p30"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{temp }\OtherTok{\textless{}{-}}\NormalTok{ temp\_81to10 }\SpecialCharTok{\textless{}}\NormalTok{ p30}
+\FunctionTok{mean}\NormalTok{(temp)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.01944444
+\end{verbatim}
+
+\emph{Explica el resultado}
+
+Let's check whether we get a similar result for the number of
+observations that are larger than 0.11.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Proportion larger than p70"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Proportion larger than p70"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(temp\_81to10 }\SpecialCharTok{\textgreater{}}\NormalTok{ p70)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.8472222
+\end{verbatim}
+
+{[}End of walk-through{]}
+
+\subsubsection{R walk-through 1.7 Calculating and understanding mean and
+variance}\label{r-walk-through-1.7-calculating-and-understanding-mean-and-variance}
+
+Calculate mean and variance. One option is to use the \texttt{mosaic}
+package
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Mean of DJF temperature anomalies across periods"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mean of DJF temperature anomalies across periods"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{DJF}\SpecialCharTok{|}\NormalTok{Period,}\AttributeTok{data =}\NormalTok{ tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    1921-1950    1951-1980    1981-2010 
+## -0.030333333 -0.002666667  0.523333333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Variance of DJF anomalies across periods"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variance of DJF anomalies across periods"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{DJF}\SpecialCharTok{|}\NormalTok{Period,}\AttributeTok{data =}\NormalTok{ tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  1921-1950  1951-1980  1981-2010 
+## 0.05672057 0.05038575 0.07871264
+\end{verbatim}
+
+Using the data in tempdata (\texttt{data\ =\ tempdata}), we calculated
+the mean (\texttt{mean}) and variance (\texttt{var}) of variable
+\texttt{\textasciitilde{}DJF} separately for (\texttt{\textbar{}}) each
+value of \texttt{Period}. The \texttt{mosaic} package allows us to
+calculate the means/variances for each period all at once. If
+\texttt{mosaic} is not loaded, you will get the error message:
+\texttt{Error\ in\ mean(\textasciitilde{}DJF\ \textbackslash{}\textbar{}\ Period,\ data\ =\ tempdata)\ :\ unused\ argument\ (data\ =\ tempdata)}.
+
+\emph{Interpreta los resultados}
+
+Let's calculate the variances through the periods for the other seasons.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Variance of MAM anomalies across periods"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variance of MAM anomalies across periods"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{MAM}\SpecialCharTok{|}\NormalTok{Period,}\AttributeTok{data =}\NormalTok{ tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  1921-1950  1951-1980  1981-2010 
+## 0.03099782 0.02540000 0.07573345
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Variance of JJA anomalies across periods"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variance of JJA anomalies across periods"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{JJA}\SpecialCharTok{|}\NormalTok{Period,}\AttributeTok{data =}\NormalTok{ tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  1921-1950  1951-1980  1981-2010 
+## 0.02128920 0.01460644 0.06749609
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\StringTok{"Variance of SON anomalies across periods"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variance of SON anomalies across periods"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{SON}\SpecialCharTok{|}\NormalTok{Period,}\AttributeTok{data =}\NormalTok{ tempdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  1921-1950  1951-1980  1981-2010 
+## 0.02819264 0.02635126 0.11104644
+\end{verbatim}
+
+\emph{Interpreta lso resutlados}
+
+We can plot a line chart to see these changes graphically. (This type of
+chart is formally known as a `time-series plot'). Make sure to change
+the chart title according to the latest year in your data (here we used
+2016).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{DJF, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \AttributeTok{ylab =} \StringTok{"Annual temperature anomalies"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{)}
+
+\CommentTok{\# \textbackslash{}n creates a line break}
+\FunctionTok{title}\NormalTok{(}\StringTok{"Average temperature anomaly in DJF and JJA }\SpecialCharTok{\textbackslash{}n}\StringTok{ in the northern hemisphere (1880{-}2016)"}\NormalTok{)}
+
+\CommentTok{\# Add a horizontal line (at y = 0)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h =} \DecValTok{0}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkorange2"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(tempdata}\SpecialCharTok{$}\NormalTok{JJA, }\AttributeTok{col =} \StringTok{"darkgreen"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{) }
+
+\CommentTok{\# Add a label to the horizontal line}
+\FunctionTok{text}\NormalTok{(}\DecValTok{1895}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\StringTok{"1951{-}1980 average"}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\DecValTok{1880}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\AttributeTok{legend =} \FunctionTok{c}\NormalTok{(}\StringTok{"DJF"}\NormalTok{, }\StringTok{"JJA"}\NormalTok{),}
+  \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"darkgreen"}\NormalTok{), }
+  \AttributeTok{lty =} \DecValTok{1}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+{[}End of walk-through{]}
+
+\subsection{Part 1.3 Carbon emissions and the
+environment}\label{part-1.3-carbon-emissions-and-the-environment}
+
+\subsubsection{R walk-through 1.8 Scatterplots and the correlation
+coefficient}\label{r-walk-through-1.8-scatterplots-and-the-correlation-coefficient}
+
+First we will use the \texttt{read.csv} function to import the CO2
+datafile into R, and call it \texttt{CO2data}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CO2data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/moral/OneDrive/Escritorio/Taller\_3\_Bohada\_Sarmiento\_Lopez\_Arias/RAW/1\_CO2 data.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This file has monthly data, but in contrast to the data in
+\texttt{tempdata}, the data is all in one column (this is more
+conventional than the column per month format). To make this task
+easier, we will pick the June data from the CO2 emissions and add them
+as an additional variable to the \texttt{tempdata} dataset.
+
+R has a convenient function called \texttt{merge} to do this. First we
+create a new dataset that contains only the June emissions data
+(`CO2data\_june').
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CO2data\_june }\OtherTok{\textless{}{-}}\NormalTok{ CO2data[CO2data}\SpecialCharTok{$}\NormalTok{Month }\SpecialCharTok{==} \DecValTok{6}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+Then we use this data in the \texttt{merge} function. The \texttt{merge}
+function takes the original `tempdata' and the `CO2data' and merges
+(combines) them together. As the two dataframes have a common variable,
+\texttt{Year}, R automatically matches the data by year.
+
+(\emph{Extension:} Look up \texttt{?merge} or Google `How to use the R
+merge function' to figure out what \texttt{all.x} does, and to see other
+options that this function allows.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(CO2data)[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"Year"}
+\NormalTok{tempCO2data }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(tempdata, CO2data\_june)}
+\end{Highlighting}
+\end{Shaded}
+
+Let us have a look at the data and check that it was combined correctly:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(tempCO2data[, }\FunctionTok{c}\NormalTok{(}\StringTok{"Year"}\NormalTok{, }\StringTok{"Jun"}\NormalTok{, }\StringTok{"Trend"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year   Jun  Trend
+## 1 1958  0.05 314.85
+## 2 1959  0.14 315.92
+## 3 1960  0.18 317.36
+## 4 1961  0.18 317.48
+## 5 1962 -0.13 318.27
+## 6 1963 -0.04 319.16
+\end{verbatim}
+
+\begin{verbatim}
+##   Year   Jun  Trend
+## 1 1958  0.04 314.85
+## 2 1959  0.14 315.92
+## 3 1960  0.18 317.36
+## 4 1961  0.19 317.48
+## 5 1962 -0.10 318.27
+## 6 1963 -0.02 319.16
+\end{verbatim}
+
+To make a scatterplot, we use the \texttt{plot} function. R's default
+chart for \texttt{plot} is a scatterplot, so we do not need to specify
+the chart type. One new option that applies to scatterplots is
+\texttt{pch\ =}, which determines the appearance of the data points. The
+number 16 corresponds to filled-in circles, but you can experiment with
+other numbers (from 0 to 25) to see what the data points look like.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Jun, tempCO2data}\SpecialCharTok{$}\NormalTok{Trend, }
+  \AttributeTok{xlab =} \StringTok{"Temperature anomaly (degrees Celsius)"}\NormalTok{, }
+  \AttributeTok{ylab =} \StringTok{"CO2 levels (trend, mole fraction)"}\NormalTok{, }
+  \AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{)}
+
+\FunctionTok{title}\NormalTok{(}\StringTok{"Scatterplot for CO2 emissions and temperature anomalies"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-37-1.pdf}
+
+The \texttt{cor} function calculates the correlation coefficient.
+\emph{Note}: You may get slightly different results if you are using the
+latest data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Jun, tempCO2data}\SpecialCharTok{$}\NormalTok{Trend)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9149093
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0.9157744
+\end{verbatim}
+
+\emph{Interpretar resultados}
+
+One limitation of this correlation measure is that it only tells us
+about the strength of the upward- or downward-sloping linear
+relationship between two variables, in other words how closely the
+scatterplot aligns along an upward- or downward-sloping straight line.
+The correlation coefficient cannot tell us if the two variables have a
+different kind of relationship (such as that represented by a wavy
+line).
+
+\emph{Note:} The word `strong' is used for coefficients that are close
+to 1 or −1, and `weak' is used for coefficients that are close to 0,
+though there is no precise range of values that are considered `strong'
+or `weak'.
+
+If you need more insight into correlation coefficients, you may find it
+helpful to watch online tutorials such as `Correlation coefficient
+intuition' (\url{https://tinyco.re/4363520}) from the Khan Academy.
+
+As we are dealing with time-series data, it is often more instructive to
+look at a line plot, as a scatterplot cannot convey how the observations
+relate to each other in the time dimension. If you were to check the
+variable types (using \texttt{str(tempCO2data)}), you would see that the
+data is not yet in time-series format. We could continue with the format
+as it is, but for plotting purposes it is useful to let R know that we
+are dealing with time-series data. We therefore apply the \texttt{ts}
+function as we did in Part 1.1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tempCO2data}\SpecialCharTok{$}\NormalTok{Jun }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Jun, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1958}\NormalTok{), }\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2017}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{) }
+\NormalTok{tempCO2data}\SpecialCharTok{$}\NormalTok{Trend }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Trend, }
+  \AttributeTok{start =} \FunctionTok{c}\NormalTok{(}\DecValTok{1958}\NormalTok{), }\AttributeTok{end =} \FunctionTok{c}\NormalTok{(}\DecValTok{2017}\NormalTok{), }\AttributeTok{frequency =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+Let's start by plotting the June temperature anomalies.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Jun, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \AttributeTok{ylab =} \StringTok{"June temperature anomalies"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{)}
+
+\FunctionTok{title}\NormalTok{(}\StringTok{"June temperature anomalies and CO2 emissions"}\NormalTok{)   }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-40-1.pdf}
+
+Typically, when using the \texttt{plot} function we would now only need
+to add the line for the second variable using the \texttt{lines}
+command. The issue, however, is that the CO2 emissions variable
+(\texttt{Trend}) is on a different scale, and the automatic vertical
+axis scale (from --0.2 to about 1.2) would not allow for the display of
+\texttt{Trend}. To resolve this issue you can introduce a second
+vertical axis using the commands below. (\emph{Tip:} You are unlikely to
+remember the exact commands required, however you can Google `R plot 2
+vertical axes' or a similar search term, and then adjust the code you
+find so it will work on your dataset.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+
+\FunctionTok{plot}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Jun, }\AttributeTok{type =} \StringTok{"l"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{,}
+  \AttributeTok{ylab =} \StringTok{"June temperature anomalies"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{)}
+
+\FunctionTok{title}\NormalTok{(}\StringTok{"June temperature anomalies and CO2 emissions"}\NormalTok{)  }
+
+\CommentTok{\# This puts the next plot into the same picture.}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{new =}\NormalTok{ T)}
+
+\CommentTok{\# No axis, no labels}
+\FunctionTok{plot}\NormalTok{(tempCO2data}\SpecialCharTok{$}\NormalTok{Trend, }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{, }
+  \AttributeTok{axes =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{xlab =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{ylab =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{cex =} \FloatTok{1.2}\NormalTok{) }
+\FunctionTok{axis}\NormalTok{(}\AttributeTok{side =} \DecValTok{4}\NormalTok{)}
+\FunctionTok{mtext}\NormalTok{(}\AttributeTok{side =} \DecValTok{4}\NormalTok{, }\AttributeTok{line =} \DecValTok{3}\NormalTok{, }\StringTok{\textquotesingle{}CO2 emissions\textquotesingle{}}\NormalTok{)}
+
+\FunctionTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{, }\AttributeTok{legend =} \FunctionTok{c}\NormalTok{(}\StringTok{"June temp anom"}\NormalTok{, }\StringTok{"CO2 emis"}\NormalTok{),}
+  \AttributeTok{lty =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"black"}\NormalTok{), }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{doing-economics-markdown-working-in-r-project-est--1-_files/figure-latex/unnamed-chunk-41-1.pdf}
+
+\emph{Interpreta los resultados}
+
+{[}End of walk-through{]}
+
+\end{document}
