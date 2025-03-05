@@ -26,7 +26,7 @@ Since our data is in csv format, we use the `read.csv` function to import the da
 Here you can see commands to R which are spread across two lines. You can spread a command across multiple lines, but you must adhere to the following two rules for this to work. First, the line break should come inside a set of parenthesis (i.e. between `(` and `)` or straight after the assignment operator (`<-`). Second, the line break must not be inside a string (whatever is inside quotes) or in the middle of a word or number.
 
 ```{r}
-tempdata <- read.csv("C:/Users/moral/OneDrive/Escritorio/Taller_3_Bohada_Sarmiento_Lopez_Arias/RAW/NH.Ts+dSST.csv",
+tempdata <- read.csv("https://raw.githubusercontent.com/JulianaLopez1/Taller_3_Bohada_Sarmiento_Lopez_Arias/refs/heads/main/RAW/NH.Ts%2BdSST.csv",
   skip = 1, na.strings = "***") 
 ```
 
